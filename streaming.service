@@ -1,0 +1,11 @@
+[Unit]
+Description=Streaming
+
+[Service]
+ExecStart=/srv/streaming/streaming
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
