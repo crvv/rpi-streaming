@@ -35,6 +35,7 @@ func init() {
 }
 
 func main() {
+	defer os.Exit(1)
 	wg := new(sync.WaitGroup)
 	ctx, cancel := context.WithCancel(context.Background())
 	signalCh := make(chan os.Signal, 1)
@@ -131,7 +132,7 @@ func startProcess(cmd *exec.Cmd, cancel context.CancelFunc, wg *sync.WaitGroup) 
 }
 
 func parse(ctx context.Context, r io.Reader, ch chan []byte) error {
-	bufSize := bitrate / 8 * 2
+	bufSize := bitrate / 8 * 4
 	buf := make([]byte, bufSize)
 	position := 0
 	lastType := ""
