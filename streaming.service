@@ -2,7 +2,7 @@
 Description=Streaming
 
 [Service]
-ExecStart=/srv/streaming/streaming
+ExecStart=/usr/local/bin/streaming
 PrivateTmp=true
 ProtectHome=true
 ProtectSystem=strict
